@@ -1,0 +1,170 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f0f4ff;
+  color: #333;
+  padding: 40px 20px;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.main-heading {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #3a0070;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.4s ease;
+}
+
+.main-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6a00f4, #00c2ff);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* GRID LAYOUT */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-items: center;
+}
+
+/* CARD STYLING */
+.card {
+  background: linear-gradient(to bottom right, #ffffff, #f2f2ff);
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 480px;
+  border-top: 6px solid #6a00f4;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #3a0070;
+  border-bottom: 2px solid #00c2ff;
+  padding-bottom: 10px;
+  transition: color 0.4s ease;
+}
+
+.card ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #444;
+  position: relative;
+  padding-left: 20px;
+}
+
+.card ul li::before {
+  content: "⟶";
+  position: absolute;
+  left: 0;
+  color: #6a00f4;
+  font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #6a00f4, #00c2ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #5500cc, #00aaff);
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .main-heading {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+/* 🌙 DARK MODE SUPPORT */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+
+  .main-heading {
+    color: #f5baff;
+  }
+
+  .card {
+    background: linear-gradient(to bottom right, #1e1e2f, #2a2a40);
+    border-top-color: #bb86fc;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .card h3 {
+    color: #f0caff;
+    border-color: #03dac6;
+  }
+
+  .card ul li {
+    color: #e0e0e0;
+  }
+
+  .card ul li::before {
+    color: #bb86fc;
+  }
+
+  .button {
+    background: linear-gradient(to right, #bb86fc, #03dac6);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  }
+
+  .button:hover {
+    background: linear-gradient(to right, #9f6bff, #03c0c0);
+  }
+}
+
